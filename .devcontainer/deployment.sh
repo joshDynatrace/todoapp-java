@@ -12,7 +12,7 @@ wget -O Dynatrace-OneAgent-Linux-1.329.73.20260123-140641.sh \
   --header="Authorization: Api-Token $DT_API_TOKEN"
 
 # Run the installer
-/bin/sh Dynatrace-OneAgent-Linux-1.329.73.20260123-140641.sh --set-monitoring-mode=discovery --set-app-log-content-access=true
+sudo ./bin/sh Dynatrace-OneAgent-Linux-1.329.73.20260123-140641.sh --set-monitoring-mode=discovery --set-app-log-content-access=true
 
 # forward all traffic to 8080 on the local machine
 # nohup kubectl port-forward deployment/frontend 8080:8080 &
