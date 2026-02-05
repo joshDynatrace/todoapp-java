@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Build the todoapp
-docker build -t tutorial-java-workshop ../.
+docker build -t todoapp-java .
 
 # Run the todo app
-docker run -p 8080:8080 tutorial-java-workshop
+docker run -p 8080:8080 todoapp-java
 
 # install the Dynatrace agent
 
