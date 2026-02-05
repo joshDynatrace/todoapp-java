@@ -15,6 +15,8 @@ docker run -p 8080:8080 todoapp-java &
 # chmod +x Dynatrace-OneAgent-Linux-1.329.73.20260123-140641.sh
 # sudo ./Dynatrace-OneAgent-Linux-1.329.73.20260123-140641.sh --set-monitoring-mode=discovery --set-app-log-content-access=true
 
+docker volume create oneagent-volume
+
 docker run -d \
 --restart=on-failure:5 \
 --read-only=true \
@@ -38,7 +40,7 @@ docker run -d \
 --cap-add SYS_RESOURCE \
 --security-opt apparmor:unconfined \
 -v /:/mnt/root \
--v <volume name>:/mnt/volume_storage_mount \
+-v oneagent-volume:/mnt/volume_storage_mount \
 -e ONEAGENT_ENABLE_VOLUME_STORAGE=true \
 -e ONEAGENT_INSTALLER_SCRIPT_URL=https://arn95277.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86 \
 -e ONEAGENT_INSTALLER_DOWNLOAD_TOKEN=$DT_API_TOKEN \
