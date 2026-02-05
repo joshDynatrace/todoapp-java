@@ -1,5 +1,5 @@
 {
-	 "image": "mcr.microsoft.com/devcontainers/java:21",
+	"image": "mcr.microsoft.com/devcontainers/java:21",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"moby": false
@@ -12,5 +12,26 @@
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080]
+	"forwardPorts": [8080],
+
+	// add labels
+	"portsAttributes": {
+		"8080": { "label": "Todo App" }
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "chmod +x .devcontainer/post-create.sh && .devcontainer/post-create.sh",
+
+	// Use 'postStartCommand' to run commands after the container starts.
+ 	"postStartCommand": "chmod +x .devcontainer/post-start.sh && .devcontainer/post-start.sh",
+
+	// // Add recommended secrets
+	"secrets": {
+	 	  "DT_ENDPOINT": {
+	 		"description": "eg. https://abc12345.live.dynatrace.com or https://abc12345.sprint.dynatracelabs.com"
+		},
+		  "DT_DOWNLOAD_TOKEN": {
+	    	"description": "Dynatrace Download token"
+		}
+	}
 }
