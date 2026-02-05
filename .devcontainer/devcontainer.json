@@ -27,11 +27,8 @@
 
 	// // Add recommended secrets
 	"secrets": {
-	 	  "DT_ENDPOINT": {
-	 		"description": "eg. https://abc12345.live.dynatrace.com or https://abc12345.sprint.dynatracelabs.com"
-		},
-		  "DT_DOWNLOAD_TOKEN": {
-	    	"description": "Dynatrace Download token"
+		  "DT_API_TOKEN": {
+	    	"description": "Dynatrace API token"
 		}
 	}
 }
