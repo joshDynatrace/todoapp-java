@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk as build
+FROM eclipse-temurin:8-jdk AS build
 
 RUN mkdir -p /app
 WORKDIR /app
@@ -8,7 +8,7 @@ RUN ./gradlew -i bootJar
 
 # ---------------------------------------------------------- #
 
-FROM openjdk:8-jdk as release
+FROM eclipse-temurin:8-jdk AS release
 
 RUN mkdir -p /app
 # Copy the jar image (which already include resoures)
