@@ -4,7 +4,7 @@
 docker build -t todoapp-java .
 
 # Run the todo app
-docker run -p 8080:8080 todoapp-java
+docker run -p 8080:8080 todoapp-java &
 
 # Download the Dynatrace OneAgent installer
 wget -O Dynatrace-OneAgent-Linux-1.329.73.20260123-140641.sh \
