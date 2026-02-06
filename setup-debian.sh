@@ -2,20 +2,16 @@
 
 sudo apt update -y
 
+#install git
 sudo apt-get install -y git
 
+# install the JDK
 sudo apt install -y default-jdk
 
-# sudo apt-get install curl unzip -y
-# wget https://services.gradle.org/distributions/gradle-9.0.0-all.zip
-# unzip gradle-9.0.0-all.zip
-# sudo mv gradle-9.0.0 /opt/gradle
-# echo "export PATH=/opt/gradle/bin:${PATH}" | sudo tee /etc/profile.d/gradle.sh
-# sudo chmod +x /etc/profile.d/gradle.sh
-# source /etc/profile.d/gradle.sh
-
+# clone the repo
 git clone https://github.com/joshDynatrace/todoapp-java
 cd todoapp-java
 
+# Run the todo app
 ./gradlew -i bootJar
 java -jar build/libs/tutorial-1.0.0.jar
